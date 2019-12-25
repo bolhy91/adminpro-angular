@@ -4,6 +4,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProgressComponent } from './progress/progress.component';
 import { Grafica1Component } from './grafica1/grafica1.component';
 import { NgModule } from '@angular/core';
+import { AccountSettingsComponent } from './account-settings/account-settings.component';
 
 const pageRoutes: Routes = [
   {
@@ -22,6 +23,10 @@ const pageRoutes: Routes = [
       {
         path: '', redirectTo: '/dashboard', pathMatch: 'full'
       },
+      {
+        path: 'account-settings',
+        component: AccountSettingsComponent
+      }
     ]
   },
 ];

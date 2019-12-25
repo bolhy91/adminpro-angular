@@ -9,6 +9,7 @@ import { NgModule } from '@angular/core';
 import { PageRoutingModule } from './pages.routes';
 import { FormsModule } from "@angular/forms";
 import { ChartsModule } from 'ng2-charts';
+import { AccountSettingsComponent } from './account-settings/account-settings.component';
 
 
 
@@ -20,7 +21,8 @@ import { ChartsModule } from 'ng2-charts';
     Grafica1Component,
     //temporal
     IncrementadorComponent,
-    GraficoDonnaComponent
+    GraficoDonnaComponent,
+    AccountSettingsComponent
   ],
   imports: [
     PageRoutingModule,
