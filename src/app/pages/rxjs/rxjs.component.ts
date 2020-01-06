@@ -83,7 +83,7 @@ export class RxjsComponent implements OnInit, OnDestroy {
 
       }, 1000);
 
-    }).pipe(map(resp => resp.valor ));
+    }).pipe(map(resp => resp['valor'] ));
   }
 
   regresaFilterObservable(): Observable<any> {
@@ -108,7 +108,7 @@ export class RxjsComponent implements OnInit, OnDestroy {
       }, 1000);
 
     }).pipe(
-      map(resp => resp.valor),
+      map(resp => resp['valor']),
       filter((valor, index) => {
         if ((valor % 2) === 1) {
           //impar
