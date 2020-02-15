@@ -5,6 +5,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { PipesModule } from '../pipes/pipes.module';
 
 
 const COMPONENTS = [BreadcrumbsComponent, SidebarComponent, NopagefoundComponent, HeaderComponent];
@@ -13,7 +14,8 @@ const COMPONENTS = [BreadcrumbsComponent, SidebarComponent, NopagefoundComponent
   declarations: [...COMPONENTS],
   imports: [
     RouterModule,
-    CommonModule
+    CommonModule,
+    PipesModule
   ],
   exports: [...COMPONENTS]
 })

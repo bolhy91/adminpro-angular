@@ -12,6 +12,9 @@ import { ChartsModule } from 'ng2-charts';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
+import { PipesModule } from '../pipes/pipes.module';
+import { ProfileComponent } from './profile/profile.component';
+import { CommonModule } from '@angular/common';
 
 
 
@@ -26,13 +29,16 @@ import { RxjsComponent } from './rxjs/rxjs.component';
     GraficoDonnaComponent,
     AccountSettingsComponent,
     PromesasComponent,
-    RxjsComponent
+    RxjsComponent,
+    ProfileComponent
   ],
   imports: [
+    CommonModule,
     PageRoutingModule,
     SharedModule,
     FormsModule,
-    ChartsModule
+    ChartsModule,
+    PipesModule
   ],
   exports: [DashboardComponent, ProgressComponent, Grafica1Component]
 })
