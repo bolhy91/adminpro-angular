@@ -45,6 +45,7 @@ export class MedicoService {
         alert("Medico creado con exito");
         return res.medico;
       }));
+
     }
   }
 

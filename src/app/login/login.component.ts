@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { UsuarioService } from '../services/usuario/usuario.service';
 import { Usuario } from '../models/usuario.model';
+import { Observable } from 'rxjs';
 
 declare function init_plugins();
 declare const gapi: any;
@@ -38,11 +39,13 @@ export class LoginComponent implements OnInit {
       return;
     }
     let usuario = new Usuario(null, forma.value.correo, forma.value.password)
-    this.usuarioService.loginUsuario(usuario, forma.value.recuerdame).subscribe(res => {
-      console.log(res);
+    this.usuarioService.loginUsuario(usuario, forma.value.recuerdame)
+    .subscribe(res => {
       this.router.navigate(['/dashboard']);
     }, error => {
-      console.log(error);
+        alert(error.error.message);
+      const err = Observable.throw(error);
+
     });
   }
 
