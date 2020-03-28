@@ -1,3 +1,4 @@
+import { environment } from 'src/environments/environment';
 import { environment } from './../../../environments/environment';
 import { Injectable } from '@angular/core';
 import { Usuario } from '../../models/usuario.model';
@@ -127,6 +128,15 @@ export class UsuarioService {
     url +=`?token=${this.token}`;
     return this.http.delete(url).pipe(map(res => {
       swal("Usuario borrado", "El usuario fue eliminado correctamente", "success");
+      return true;
+    }));
+  }
+
+  renuevaToken() {
+    return this.http.get(`${environment.url}login/renuevatoken?token=${this.token}`)
+    .pipe(map((res: any) => {
+      this.token = res.token;
+      localStorage.setItem('token', this.token);
       return true;
     }));
   }

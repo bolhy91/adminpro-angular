@@ -15,6 +15,7 @@ import { MedicosComponent } from './medicos/medicos.component';
 import { MedicoComponent } from './medicos/medico.component';
 import { BusquedaComponent } from './busqueda/busqueda.component';
 import { AdminGuard } from '../services/guards/admin.guard';
+import { VerificaRenuevaGuard } from '../services/guards/verifica-renueva.guard';
 
 const pageRoutes: Routes = [
   {
@@ -23,7 +24,7 @@ const pageRoutes: Routes = [
     canActivate: [LoginGuardGuard],
     children: [
       {
-        path: 'dashboard', component: DashboardComponent, data: {titulo: 'Dasboard'}
+        path: 'dashboard', canActivate: [VerificaRenuevaGuard], component: DashboardComponent, data: {titulo: 'Dasboard'}
       },
       {
         path: 'progress', component: ProgressComponent, data: { titulo: 'Progreso' }
